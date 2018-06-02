@@ -17,9 +17,7 @@ angular.module('app').controller('menuController', function ($scope, $state, Api
                 var allMobiles = result.data.mobiles;
                 $scope.mobiles = allMobiles
             }
-            if(result.data.message){
-                $scope.noMobiles = result.data.message;
-            }
+            $scope.noMobiles = "";
             
         })
     })

@@ -37,7 +37,8 @@ angular.module('app').controller('addMobileController', function ($scope, $state
                 console.log(result.data)
                 if (result.data.success) {
                     $scope.mobileStatus = "mobile added successfully.";
-                    $scope.mobile = {}
+                    $scope.mobile = {};
+                    $scope.mobileStatus = "";
                     $rootScope.$emit('updateMobiles',data)
                     // $state.go('app.viewMobile')
                 }
@@ -50,16 +51,5 @@ angular.module('app').controller('addMobileController', function ($scope, $state
         }
 
     }
-    // var mobileAdded = function (result) {
-    //     console.log(result.data)
-    //     if (result.data.success) {
-    //         $scope.mobileStatus = "mobile added successfully.";
-    //         $scope.mobile = {}
-    //         $rootScope.$emit('updateMobiles',data)
-    //         // $state.go('app.viewMobile')
-    //     }
-    //     if (result.data.error) {
-    //         $scope.mobileStatus = "mobile already exists."
-    //     }
-    // }
+    
 })

@@ -5,10 +5,10 @@ var ObjectId = Schema.ObjectId;
 module.exports = mongoose.model('Mobile',new Schema({
     name:String,
     model: String,
-    cost : Number,
+    cost : String,
     color : String,
-    battery : Number,
-    primaryCamera : Number,
-    secondaryCamera : Number,
-    storage : Number
+    battery : String,
+    primaryCamera : String,
+    secondaryCamera : String,
+    storage : String
 }))
