@@ -15,7 +15,7 @@ module.exports.postEditMobile = function(req,res){
         Mobile.update({_id : req.params.id}, {$set : data},{ upsert: false, multi: false },function(err,data){
             if(data){
                 console.log("success")
-                res.send({success:"success"})
+                res.send({success:data})
             }
         })
 

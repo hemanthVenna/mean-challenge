@@ -1,4 +1,4 @@
-angular.module('app').controller('viewMobileController', function ($scope, $state, ApiService, $stateParams, $mdDialog,$window) {
+angular.module('app').controller('viewMobileController', function ($scope, $state, ApiService, $stateParams, $mdDialog, $window,$rootScope) {
     var paramsId = $stateParams.id;
     $scope.moreFeatures = false;
     console.log("paramsId" + paramsId)
@@ -27,6 +27,17 @@ angular.module('app').controller('viewMobileController', function ($scope, $stat
     $scope.hideFeatures = function () {
         $scope.moreFeatures = false;
     }
+    $rootScope.$on('updateData', function (evt, data) {
+        
+        $scope.name = data.mobileName;
+        $scope.model = data.mobileModel;
+        $scope.cost = data.mobileCost;
+        $scope.color = data.mobileColor;
+        $scope.battery = data.mobileBattery;
+        $scope.primaryCamera = data.mobilePrimaryCamera;
+        $scope.secondaryCamera = data.mobileSecondaryCamera;
+        $scope.memory = data.mobileMemory;
+    })
     function DialogController($scope, $mdDialog) {
         console.log("paramsId" + paramsId)
         var url = "/mobiles/" + paramsId;
@@ -44,6 +55,7 @@ angular.module('app').controller('viewMobileController', function ($scope, $stat
                 mobileMemory: allMobiles.storage
             }
         })
+
         $scope.editMobile = function (mobile) {
             var mobileName = mobile.mobileName;
             var mobileModel = mobile.mobileModel;
@@ -65,11 +77,20 @@ angular.module('app').controller('viewMobileController', function ($scope, $stat
                 data.mobileSecondaryCamera = mobileSecondaryCamera;
                 data.mobileMemory = mobileMemory;
                 var url = "http://localhost:3000/editmobile/" + paramsId
-                ApiService.post(url, data).then(function (res) {
+                ApiService.post(url, data).then(function (result) {
                     console.log(result.data)
                     if (result.data.success) {
                         $scope.mobileStatus = "mobile added successfully."
-                        $window.location.reload();
+                        $mdDialog.hide();
+                        console.log(mobileName)
+                        console.log(data)
+                        $rootScope.$emit("updateData", data)
+                        // $scope.$digest(function () {
+                        //     $scope.name = mobileName
+                        //     });
+                        // $scope.name = result.data.name
+
+                        // $state.go('app.viewMobile')
                     }
                     if (result.data.error) {
                         $scope.mobileStatus = "mobile already exists."

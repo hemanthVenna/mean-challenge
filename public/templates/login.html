@@ -1,24 +1,24 @@
-<div class="registerContent">
-    <div class="specificationWrap">
-        <h3>Login</h3>
-        <h3 ng-click="go_to_register()">Register</h3>
+<div class="registerContent" class="text-center">
+    <div >
+        <p class="mobilesHeader">Login</p>
+        <!-- <h3 ng-click="go_to_register()">Register</h3> -->
 
     </div>
     <form ng-submit="loginUser(user)" autocomplete="off">
         <div class="regWrap">
-            <label for="loginEmail">Email</label>
-            <br>
-            <input type="text" id="loginEmail" ng-model="user.loginEmail">
+            <!-- <label for="loginEmail">Email</label> -->
+            <!-- <br> -->
+            <input type="text" id="loginEmail" ng-model="user.loginEmail" " placeholder="Email">
         </div>
+        <div class="regWrap" style="margin-top: 0">
+            
+            <input type="password" id="loginPassword" ng-model="user.loginPassword" placeholder="Password">
+        </div>
+        <p class="checkvalid">{{loginStatus}}</p>
         <div class="regWrap">
-            <label for="loginPassword">Password</label>
-            <br>
-            <input type="text" id="loginEmail" ng-model="user.loginPassword">
+            <input class="btn" type="submit" value="Login" style="width: 220px;margin-left: 0;">
         </div>
-        <p>{{loginStatus}}</p>
-        <div class="regWrap">
-            <input type="submit" value="Login">
-        </div>
+        <p>click here to <span ng-click="go_to_register()" style="text-decoration: underline">Register</span></p>
     </form>
 
 </div>

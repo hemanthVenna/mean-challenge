@@ -18,7 +18,7 @@ module.exports.postAddMobile = function(req,res){
     Mobile.findOne({$and:[{name:name},{model:model}]},function(err,mobile){
         console.log(mobile)
         if(!mobile){
-            console.log("add success1")
+            // console.log("add success1")
             var mobile = new Mobile({
                 name:req.body.mobileName,
                 cost:req.body.mobileCost,
