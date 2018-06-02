@@ -1,0 +1,19 @@
+<div style="display: flex;flex-direction: row; ">
+    <div class="menuWrap" style="width: 200px">
+        <div>
+            <buttton class="btn" ng-click="go_to_addMobile()">Add Mobile</buttton>
+        </div>
+        <div>
+            <p class="mobilesHeader">Mobiles</p>
+            <p class="mobilesHeader">{{noMobiles}}</p>
+            <div ng-repeat="mobile in mobiles track by $index">
+                <div class="mobileWrap" ng-click="go_to_viewMobile(mobile._id)">{{mobile.name}} - {{mobile.model}}</div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 600px;">
+        <div ui-view="contentView">
+            <div></div>
+        </div>
+    </div>
+</div>

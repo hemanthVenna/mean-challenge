@@ -1,0 +1,43 @@
+<div>
+    <div class="specificationWrap">
+        <p>Name</p>
+        <p>{{name}}</p>
+    </div>
+    <div class="specificationWrap">
+        <p>Model</p>
+        <p>{{model}}</p>
+    </div>
+    <div class="specificationWrap">
+        <p>Color</p>
+        <p>{{color}}</p>
+    </div>
+    <div class="specificationWrap">
+        <p>Cost</p>
+        <p>Rs.{{cost}}</p>
+    </div>
+    
+    <div ng-show="moreFeatures">
+        <div class="specificationWrap">
+            <p>Battery</p>
+            <p>{{battery}} mAh</p>
+        </div>
+        <div class="specificationWrap">
+            <p>Primary Camera</p>
+            <p>{{primaryCamera}} MP</p>
+        </div>
+        <div class="specificationWrap">
+            <p>Secondary camera</p>
+            <p>{{secondaryCamera}} MP</p>
+        </div>
+        <div class="specificationWrap">
+            <p>Memory</p>
+            <p>{{memory}} GB</p>
+        </div>
+    </div>
+    <button ng-hide="moreFeatures" class="btn" ng-click="showFeatures()">More</button>
+    <button ng-show="moreFeatures"  class="btn" ng-click="hideFeatures()">Less</button>
+    <button  class="btn" ng-click="edit()">Edit</button>
+    <button  class="btn" ng-click="delete()">Delete</button>
+
+    
+</div> 

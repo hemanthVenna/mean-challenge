@@ -1,0 +1,24 @@
+<div class="registerContent">
+    <div class="specificationWrap">
+        <h3>Login</h3>
+        <h3 ng-click="go_to_register()">Register</h3>
+
+    </div>
+    <form ng-submit="loginUser(user)" autocomplete="off">
+        <div class="regWrap">
+            <label for="loginEmail">Email</label>
+            <br>
+            <input type="text" id="loginEmail" ng-model="user.loginEmail">
+        </div>
+        <div class="regWrap">
+            <label for="loginPassword">Password</label>
+            <br>
+            <input type="text" id="loginEmail" ng-model="user.loginPassword">
+        </div>
+        <p>{{loginStatus}}</p>
+        <div class="regWrap">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,41 @@
+<div>
+    <form ng-submit="addMobile(mobile)" autocomplete="off">
+        <p class="mobilesHeader">Add Mobile</p>
+        <div class="specificationWrap">
+            <label for="mobileName">Name</label>
+            <input type="text" id="mobileName" ng-model="mobile.mobileName">
+        </div>
+        <div class="specificationWrap">
+            <label for="mobileModel">Model</label>
+            <input type="text" id="mobileModel" ng-model="mobile.mobileModel">
+        </div>
+        <div class="specificationWrap">
+            <label for="mobileColor">Color</label>
+            <input type="text" id="mobileColor" ng-model="mobile.mobileColor">
+        </div>
+        <div class="specificationWrap">
+            <label for="mobileCost">Cost</label>
+            <input type="text" id="mobileCost" ng-model="mobile.mobileCost">
+        </div class="specificationWrap">
+        <div class="specificationWrap">
+            <label for="mobileBattery">Battery</label>
+            <input type="text" id="mobileBattery" ng-model="mobile.mobileBattery">
+        </div>
+        <div class="specificationWrap">
+            <label for="mobilePrimaryCamera">Primary Camera</label>
+            <input type="text" id="mobilePrimaryCamera" ng-model="mobile.mobilePrimaryCamera">
+        </div>
+        <div class="specificationWrap">
+            <label for="mobileSecondaryCamera">Secondary Camera</label>
+            <input type="text" id="mobileSecondaryCamera" ng-model="mobile.mobileSecondaryCamera">
+        </div>
+        <div class="specificationWrap">
+            <label for="mobileMemory">Memory</label>
+            <input type="text" id="mobileMemory" ng-model="mobile.mobileMemory">
+        </div>
+        <div>{{mobileStatus}}</div>
+        <div class="specificationWrap text-center">
+                <input type="submit" class="addMobileSubmit" id="mobileMemory">
+            </div>
+    </form>
+</div>
